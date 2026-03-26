@@ -2,8 +2,8 @@ from tkinter.font import names
 
 from flask_admin import Admin, AdminIndexView
 from flask_admin.contrib.sqla import ModelView
-from saleappv1.eapp.models import Category, Product, UserRole
-from saleappv1.eapp import db, app
+from eapp.models import Category, Product, UserRole
+from eapp import db, app
 from flask_login import current_user, logout_user
 from flask_admin import BaseView, expose
 from flask import redirect

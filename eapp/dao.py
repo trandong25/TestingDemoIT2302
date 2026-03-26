@@ -2,9 +2,9 @@ import re
 
 from sqlalchemy.exc import IntegrityError
 
-from saleappv1.eapp.models import Category, Product, User, Receipt, ReceiptDetails
+from eapp.models import Category, Product, User, Receipt, ReceiptDetails
 import hashlib
-from saleappv1.eapp import app, db
+from eapp import app, db
 import cloudinary.uploader
 from flask_login import current_user
 from sqlalchemy import func
