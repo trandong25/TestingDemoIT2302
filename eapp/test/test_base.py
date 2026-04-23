@@ -1,6 +1,7 @@
 import pytest
 from flask import Flask
-
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
 from eapp import db
 
 
@@ -16,6 +17,12 @@ def create_app():
     register_routes(app)
     return app
 
+@pytest.fixture
+def driver():
+    service = Service(executable_path='../../.venv/chromedriver.exe')
+    driver = webdriver.Chrome(service=service)
+    yield driver
+    driver.quit()
 
 @pytest.fixture
 def test_app():
